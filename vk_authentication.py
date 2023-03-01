@@ -14,12 +14,12 @@ def authenticate_vk():
     options.add_argument(
         "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
     )
+    options.add_argument("--start-maximized")
 
     driver = webdriver.Chrome(options=options)
 
     try:
         driver.get("https://vk.com/")
-        driver.maximize_window()
         # time.sleep(2)
 
         email_input = WebDriverWait(driver, 10).until(
